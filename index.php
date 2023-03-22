@@ -13,27 +13,23 @@
 // - mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi in una cartella dedicata che possiamo chiamare Models/
 // - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
 
-class Movie{
-    public $titolo;
-    public $genere;
-    public $paese;
-    public $durata;
-    public $valutazione;
+require_once __DIR__ . "/models/movie.php";
+require_once __DIR__ . "/models/genere.php";
+require_once __DIR__ . "/data/list_movies.php";
 
-    public function __construct($_titolo, $_genere, $_paese, $_durata,  $_valutazione){
-        $this->titolo = $_titolo;
-        $this->genere = $_genere;
-        $this->paese=$_paese;
-        $this->durata=$_durata;
-        $this->valutazione=$_valutazione;
-    }
-
-    public function setValutazione($valutazione){
-        if($valutazione < 6){
-            $this->valutazione = "insufficiente";
-        };
-    }
+$array_movies = [];
+foreach($movies as $movie){
+    $array_movies[] = new Movie(
+        $movie["titolo"],
+        $movie["genere"],
+        $movie["paese"],
+        $movie["durata"],
+        $movie["valutazione"],
+    );
 }
+
+
+
 
 // $Topolino = new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5);
 // var_dump($Topolino);
@@ -45,10 +41,7 @@ class Movie{
 // $Paperino->setValutazione(8);
 // var_dump($Paperino);
 
-$array_movies = [
-    new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5),
-    new Movie("Viaggio di Paperino", "Animazione", "USA", "1h", 8)
-]
+
 
 ?>
 
@@ -67,7 +60,12 @@ $array_movies = [
 <body>
     <div class="container">
         <h1>Films</h1>
-
+        <?php foreach($array_movies as $movie) : ?>
+        <h4><?= $movie->titolo ?></h4>
+        <h4><?= $movie->genere ?></h4>
+        <h4><?= $movie->paese ?></h4>
+        <hr>
+        <?php endforeach; ?>
 
     </div>
 </body>
