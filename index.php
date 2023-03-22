@@ -20,17 +20,35 @@ class Movie{
     public $durata;
     public $valutazione;
 
-    public function __construct($_titolo, $_genere, $_paese, $_durata, int $_valutazione){
+    public function __construct($_titolo, $_genere, $_paese, $_durata,  $_valutazione){
         $this->titolo = $_titolo;
         $this->genere = $_genere;
         $this->paese=$_paese;
         $this->durata=$_durata;
         $this->valutazione=$_valutazione;
     }
+
+    public function setValutazione($valutazione){
+        if($valutazione < 6){
+            $this->valutazione = "insufficiente";
+        };
+    }
 }
 
-$Topolino = new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5);
-var_dump($Topolino);
+// $Topolino = new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5);
+// var_dump($Topolino);
+// $Topolino->setValutazione(5);
+// var_dump($Topolino);
+
+// $Paperino = new Movie("Viaggio di Paperino", "Animazione", "USA", "1h", 8);
+// var_dump($Paperino);
+// $Paperino->setValutazione(8);
+// var_dump($Paperino);
+
+$array_movies = [
+    new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5),
+    new Movie("Viaggio di Paperino", "Animazione", "USA", "1h", 8)
+]
 
 ?>
 
@@ -41,11 +59,17 @@ var_dump($Topolino);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>films</title>
 </head>
 
 <body>
+    <div class="container">
+        <h1>Films</h1>
 
+
+    </div>
 </body>
 
 </html>
