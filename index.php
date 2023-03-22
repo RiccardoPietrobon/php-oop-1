@@ -19,7 +19,18 @@ class Movie{
     public $paese;
     public $durata;
     public $valutazione;
+
+    public function __construct($_titolo, $_genere, $_paese, $_durata, int $_valutazione){
+        $this->titolo = $_titolo;
+        $this->genere = $_genere;
+        $this->paese=$_paese;
+        $this->durata=$_durata;
+        $this->valutazione=$_valutazione;
+    }
 }
+
+$Topolino = new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5);
+var_dump($Topolino);
 
 ?>
 
