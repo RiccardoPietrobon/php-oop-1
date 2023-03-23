@@ -17,19 +17,6 @@ require_once __DIR__ . "/models/movie.php";
 require_once __DIR__ . "/models/genere.php";
 require_once __DIR__ . "/data/list_movies.php";
 
-$array_movies = [];
-foreach($movies as $movie){
-    $array_movies[] = new Movie(
-        $movie["titolo"],
-        $movie["genere"],
-        $movie["paese"],
-        $movie["durata"],
-        $movie["valutazione"],
-    );
-}
-
-
-
 
 // $Topolino = new Movie("Viaggio di Topolino", "Animazione", "USA", "2h", 5);
 // var_dump($Topolino);
@@ -60,9 +47,16 @@ foreach($movies as $movie){
 <body>
     <div class="container">
         <h1>Films</h1>
-        <?php foreach($array_movies as $movie) : ?>
+        <?php foreach($movies as $movie) : ?>
+        <!-- ciclo per l'array movies -->
         <h4><?= $movie->titolo ?></h4>
-        <h4><?= $movie->genere ?></h4>
+        <h4>Generi:</h4>
+        <ul>
+            <?php foreach($movie->$generes as $genere) : ?>
+            <!-- ciclo per l'array di generi -->
+            <li><?= $genere->nome ?></li>
+            <?php endforeach; ?>
+        </ul>
         <h4><?= $movie->paese ?></h4>
         <hr>
         <?php endforeach; ?>

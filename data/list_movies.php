@@ -1,45 +1,40 @@
 <?php
 
 $movies = [
-    [
-    "titolo" => "Viaggio di Topolino",
-    "genere" => new Genere("Avventura", "Animazione", "Bambini"),
-    "paese" => "USA",
-    "durata" => "2h",
-    "valutazione" => 5,
-    ],
-
+    new Movie(
+        "Viaggio di Topolino",
         [
-    "titolo" => "Viaggio di Paperino",
-    "genere" => new Genere("Favolistico", "Animazione", "Ragazzi"),
-    "paese" => "ITA",
-    "durata" => "1h",
-    "valutazione" => 6,
-    ],
-
+            new Genere("Avventura"),
+            new Genere("Animazione"),
+            new Genere("Bambini"),
+        ],
+        "USA",
+        "2h",
+        5
+    ),
+    new Movie(
+        "Viaggio di Paperino",
         [
-    "titolo" => "Viaggio di Pippo",
-    "genere" => new Genere("Magia", "Animazione", "Bambini"),
-    "paese" => "BRA",
-    "durata" => "3h",
-    "valutazione" => 9,
-    ],
-
+            new Genere("Favolistico"),
+            new Genere("Animazione"),
+            new Genere("Ragazzi"),
+        ],
+        "ITA",
+        "1h",
+        6
+    ),
+    new Movie(
+        "Viaggio di Pippo",
         [
-    "titolo" => "Viaggio di Pluto",
-    "genere" => new Genere("Videogioco", "Animazione", "Ragazzi"),
-    "paese" => "FRA",
-    "durata" => "30 min",
-    "valutazione" => 7,
-    ],
+            new Genere("Magia"),
+            new Genere("Animazione"),
+            new Genere("Bambini"),
+        ],
+        "USA",
+        "3h",
+        9
+    )
+    ];
 
-        [
-    "titolo" => "Viaggio di Minnie",
-    "genere" => new Genere("Avventura", "Animazione", "Bambini"),
-    "paese" => "SPA",
-    "durata" => "2h",
-    "valutazione" => 8,
-    ],
-];
 
 ?>

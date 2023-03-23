@@ -5,17 +5,23 @@ require_once __DIR__ . "/genere.php";
 
 class Movie{
     public $titolo;
-    public $genere;
+    public $generes; //plurali perchè più di uno
     public $paese;
     public $durata;
     public $valutazione;
 
-    public function __construct($_titolo, Genere $_genere, $_paese, $_durata,  $_valutazione){
+    public function __construct(
+        string $_titolo,
+        array $_generes,
+        string $_paese, 
+        string $_durata,
+        int $_valutazione
+    ) {
         $this->titolo = $_titolo;
-        $this->genere = $_genere;
+        $this->generes = $_generes;
         $this->paese=$_paese;
         $this->durata=$_durata;
-        $this->valutazione=$_valutazione;
+        $this->setValutazione($_valutazione);
     }
 
     public function setValutazione($valutazione){
