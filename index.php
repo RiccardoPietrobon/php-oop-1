@@ -39,26 +39,25 @@ require_once __DIR__ . "/data/list_movies.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>films</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Films</h1>
-        <?php foreach($movies as $movie) : ?>
-        <!-- ciclo per l'array movies -->
-        <h4><?= $movie->titolo ?></h4>
-        <h4>Generi:</h4>
-        <ul>
-            <?php foreach($movie->$generes as $genere) : ?>
-            <!-- ciclo per l'array di generi -->
-            <li><?= $genere->nome ?></li>
-            <?php endforeach; ?>
-        </ul>
-        <h4><?= $movie->paese ?></h4>
-        <hr>
+        <?php foreach ($movies as $movie) : ?>
+            <!-- ciclo per l'array movies -->
+            <h4><?= $movie->titolo ?></h4>
+            <h4>Generi:</h4>
+            <ul>
+                <?php foreach ($movie->generes as $genere) : ?>
+                    <!-- ciclo per l'array di generi -->
+                    <li><?= $genere->nome ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <h4><?= $movie->paese ?></h4>
+            <hr>
         <?php endforeach; ?>
 
     </div>
